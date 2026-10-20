@@ -1,7 +1,7 @@
 Viewport <#document> at [0,0] [0+0+0 800 0+0+0] [0+0+0 600 0+0+0] [BFC] children: not-inline
   BlockContainer <html> at [0,0] [0+0+0 800 0+0+0] [0+0+0 70 0+0+0] [BFC] children: not-inline
     BlockContainer <body> at [0,0] [0+0+0 800 0+0+0] [0+0+0 70 0+0+0] children: not-inline
-      BlockContainer <div.container> at [0,0] [0+0+0 600 0+0+200] [0+0+0 70 0+0+0] children: not-inline
+      BlockContainer <div.container> at [0,0] [0+0+0 600 0+0+0] [0+0+0 70 0+0+0] children: not-inline
         BlockContainer <div.left.first-left> at [0,0] floating [0+0+0 300 0+0+0] [0+0+0 40 0+0+0] [BFC] children: not-inline
         BlockContainer <div.right.first-right> at [300,0] floating [0+0+0 300 0+0+0] [0+0+0 40 0+0+0] [BFC] children: not-inline
         BlockContainer <div.left.second-left> at [0,40] floating [0+0+0 200 0+0+0] [0+0+0 30 0+0+0] [BFC] children: not-inline

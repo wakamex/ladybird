@@ -1,7 +1,7 @@
 Viewport <#document> at [0,0] [0+0+0 800 0+0+0] [0+0+0 600 0+0+0] [BFC] children: not-inline
   BlockContainer <html> at [0,0] [0+0+0 800 0+0+0] [0+0+0 200 0+0+0] [BFC] children: not-inline
     BlockContainer <body> at [0,0] [0+0+0 800 0+0+0] [0+0+0 200 0+0+0] children: not-inline
-      BlockContainer <div> at [0,0] [0+0+0 300 0+0+500] [0+0+0 200 0+0+0] children: inline
+      BlockContainer <div> at [0,0] [0+0+0 300 0+0+0] [0+0+0 200 0+0+0] children: inline
         InlineNode <span> at [280,0] [0+0+0 60 0+0+0] [0+0+0 10 0+0+0]
           frag 0 from TextNode start: 0, length: 1, rect: [280,0 20x10] baseline: 13
               "a"
@@ -9,7 +9,7 @@ Viewport <#document> at [0,0] [0+0+0 800 0+0+0] [0+0+0 600 0+0+0] [BFC] children
           frag 0 from TextNode start: 0, length: 1, rect: [320,0 20x10] baseline: 13
               "c"
           TextNode <#text> (not painted)
-          BlockContainer <div> at [0,20] [0+0+0 50 0+0+250] [0+0+0 20 0+0+0] children: inline
+          BlockContainer <div> at [0,20] [0+0+0 50 0+0+0] [0+0+0 20 0+0+0] children: inline
             frag 0 from TextNode start: 0, length: 1, rect: [30,20 20x10] baseline: 13
                 "b"
             TextNode <#text> (not painted)

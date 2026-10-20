@@ -635,7 +635,6 @@ impl<'pass> BlockFormattingContext<'pass> {
         }
 
         let remaining_inline_size = remaining_available_space.inline_size.to_px_or_zero();
-        let containing_block_direction = self.style(self.containing_block(node)).direction();
         let computed_margin_left = style.margin_left();
         let computed_margin_right = style.margin_right();
         let compute = |input: Option<CssPixels>,
@@ -697,11 +696,11 @@ impl<'pass> BlockFormattingContext<'pass> {
                         unreachable!();
                     }
                 } else if !*margin_left_is_auto && !*margin_right_is_auto {
-                    if containing_block_direction == direction::RTL {
-                        *margin_left += underflow;
-                    } else {
-                        *margin_right += underflow;
-                    }
+                    // https://drafts.csswg.org/css-align-3/#justify-block
+                    // The rules for "over-constrained" computations in section 10.3.3 are ignored in favor of alignment
+                    // and the used value of the margin properties are therefore not adjusted to correct for the
+                    // over-constraint.
+                    // NB: The box is aligned to the inline-start edge when it is placed.
                 } else if !*margin_left_is_auto && *margin_right_is_auto {
                     *margin_right = underflow;
                     *margin_right_is_auto = false;
@@ -1217,22 +1216,56 @@ impl<'pass> BlockFormattingContext<'pass> {
         }
     }
 
+    // Distance from one edge of the containing block to the border box of a box that avoids floats, given the box's
+    // margin and the space used by floats on that side.
+    fn border_box_inset_of_box_avoiding_floats(
+        margin_is_auto: bool,
+        margin: CssPixels,
+        space_used_by_floats_on_side: CssPixels,
+        space_used_by_floats: inline_formatting_context::SpaceUsedByFloats,
+    ) -> CssPixels {
+        if margin_is_auto {
+            return space_used_by_floats_on_side + margin;
+        }
+        if margin >= CssPixels::default() {
+            return space_used_by_floats_on_side.max(margin);
+        }
+        if space_used_by_floats.left > CssPixels::default() || space_used_by_floats.right > CssPixels::default() {
+            return space_used_by_floats_on_side;
+        }
+        space_used_by_floats_on_side + margin
+    }
+
     fn border_box_left_of_box_avoiding_floats(
         &self,
         node: Node,
         used: &UsedValues,
         space_used_by_floats: inline_formatting_context::SpaceUsedByFloats,
     ) -> CssPixels {
-        if self.style(node).margin_left().is_auto() {
-            return space_used_by_floats.left + used.margin_left.get();
-        }
-        if used.margin_left.get() >= CssPixels::default() {
-            return space_used_by_floats.left.max(used.margin_left.get());
-        }
-        if space_used_by_floats.left > CssPixels::default() || space_used_by_floats.right > CssPixels::default() {
-            return space_used_by_floats.left;
-        }
-        space_used_by_floats.left + used.margin_left.get()
+        Self::border_box_inset_of_box_avoiding_floats(
+            self.style(node).margin_left().is_auto(),
+            used.margin_left.get(),
+            space_used_by_floats.left,
+            space_used_by_floats,
+        )
+    }
+
+    fn border_box_right_of_box_avoiding_floats(
+        &self,
+        node: Node,
+        used: &UsedValues,
+        space_used_by_floats: inline_formatting_context::SpaceUsedByFloats,
+    ) -> CssPixels {
+        Self::border_box_inset_of_box_avoiding_floats(
+            self.style(node).margin_right().is_auto(),
+            used.margin_right.get(),
+            space_used_by_floats.right,
+            space_used_by_floats,
+        )
+    }
+
+    fn is_in_right_to_left_containing_block(&self, node: Node) -> bool {
+        self.style(self.containing_block(node)).direction() == direction::RTL
     }
 
     fn avoid_float_intrusions(
@@ -1268,10 +1301,17 @@ impl<'pass> BlockFormattingContext<'pass> {
             };
             let space = self.intrusions_for_band_into_rect(self.band_at(border_box_block_offset_in_root), band_rect);
             let constrained = space.left > CssPixels::default() || space.right > CssPixels::default();
-            let border_box_left = self.border_box_left_of_box_avoiding_floats(node, used, space);
+            let containing_block_inline_size = available_space.inline_size.to_px_or_zero();
+            let border_box_left = if self.is_in_right_to_left_containing_block(node) {
+                containing_block_inline_size
+                    - self.border_box_right_of_box_avoiding_floats(node, used, space)
+                    - candidate_border_box_inline_size
+            } else {
+                self.border_box_left_of_box_avoiding_floats(node, used, space)
+            };
             let mut must_clear = constrained
-                && border_box_left + candidate_border_box_inline_size
-                    > available_space.inline_size.to_px_or_zero() - space.right;
+                && (border_box_left < space.left
+                    || border_box_left + candidate_border_box_inline_size > containing_block_inline_size - space.right);
             if !must_clear {
                 let border_rect = CssPixelRect {
                     x: band_rect.x + border_box_left,
@@ -1471,12 +1511,19 @@ impl<'pass> BlockFormattingContext<'pass> {
         let used = self.used(node);
         let mut inline_offset = CssPixels::default();
         let mut available_inline_size_within_containing_block = available_space.inline_size.to_px_or_zero();
+        let mut space_used_by_floats = None;
+        let right_to_left_containing_block_inline_size = match available_space.inline_size {
+            AvailableSize::Definite(size) if self.is_in_right_to_left_containing_block(node) => Some(size),
+            _ => None,
+        };
         if self.box_should_avoid_floats_because_it_establishes_fc(node) {
             let space = self.intrusion_by_floats_into_rect(
                 CssPixelRect {
                     x: content_position_in_root.x,
                     y: content_position_in_root.y,
-                    width: content_inline_size,
+                    // NB: The space used by floats on the right is measured from the right edge of this rect, so it
+                    //     must reach the containing block's right edge when the box is placed against that edge.
+                    width: right_to_left_containing_block_inline_size.unwrap_or(content_inline_size),
                     height: used.content_block_size.get(),
                 }
                 .into(),
@@ -1486,6 +1533,7 @@ impl<'pass> BlockFormattingContext<'pass> {
             available_inline_size_within_containing_block -= space.left + space.right;
             // Subtracting the left margin here because it is applied again when the margin box offset is added below.
             inline_offset = self.border_box_left_of_box_avoiding_floats(node, used, space) - used.margin_left.get();
+            space_used_by_floats = Some(space);
         }
 
         let containing_block = self.containing_block(node);
@@ -1498,6 +1546,15 @@ impl<'pass> BlockFormattingContext<'pass> {
                 - content_inline_size
                 - used.margin_left.get()
                 - used.border_box_left(false);
+        } else if let Some(containing_block_inline_size) = right_to_left_containing_block_inline_size {
+            // NB: The inline-start edge of a right-to-left containing block is its right edge, so the box is placed
+            //     against that edge using its right margin.
+            let border_box_right = match space_used_by_floats {
+                Some(space) => self.border_box_right_of_box_avoiding_floats(node, used, space),
+                None => used.margin_right.get(),
+            };
+            inline_offset =
+                containing_block_inline_size - border_box_right - used.border_box_right(false) - content_inline_size;
         } else {
             inline_offset += used.margin_left.get() + used.border_box_left(false);
         }

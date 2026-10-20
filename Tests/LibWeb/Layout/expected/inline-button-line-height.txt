@@ -1,7 +1,7 @@
 Viewport <#document> at [0,0] [0+0+0 800 0+0+0] [0+0+0 600 0+0+0] [BFC] children: not-inline
   BlockContainer <html> at [0,0] [0+0+0 800 0+0+0] [0+0+0 359 0+0+0] [BFC] children: not-inline
     BlockContainer <body> at [8,8] [8+0+0 784 0+0+8] [8+0+0 343 0+0+8] children: not-inline
-      BlockContainer <form> at [8,8] [0+0+0 300 0+0+484] [0+0+0 343 0+0+0] children: not-inline
+      BlockContainer <form> at [8,8] [0+0+0 300 0+0+0] [0+0+0 343 0+0+0] children: not-inline
         BlockContainer <(anonymous)> at [8,8] [0+0+0 300 0+0+0] [0+0+0 0 0+0+0] children: inline
           TextNode <#text> (not painted)
         Box <div.radios--container> at [8,8] flex-container(row) [0+0+0 300 0+0+0] [0+0+0 189 0+0+0] [FFC] children: not-inline

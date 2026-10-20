@@ -1,0 +1,8 @@
+zero-margins: margin-left=0px margin-right=0px
+length-margins: margin-left=20px margin-right=30px
+font-relative-margins: margin-left=20px margin-right=30px
+wider-than-container: margin-left=20px margin-right=30px
+auto-margin-left: margin-left=370px margin-right=30px
+auto-margin-right: margin-left=20px margin-right=380px
+auto-margins: margin-left=200px margin-right=200px
+rtl-length-margins: margin-left=20px margin-right=30px

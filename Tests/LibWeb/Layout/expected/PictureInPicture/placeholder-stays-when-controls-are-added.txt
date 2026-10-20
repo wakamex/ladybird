@@ -16,7 +16,7 @@ Viewport <#document> at [0,0] [0+0+0 800 0+0+0] [0+0+0 600 0+0+0] [BFC] children
             Box <div.controls.visible> at [8,445] positioned flex-container(column) [0+0+0 854 0+0+0] [0+0+0 43 0+0+0] [FFC] children: not-inline
               BlockContainer <div.timeline> at [8,445] flex-item [0+0+0 854 0+0+0] [-5+0+5 5 5+0+-5] [BFC] children: not-inline
                 BlockContainer <div.timeline-track> at [8,445] positioned [0+0+0 854 0+0+0] [0+0+0 5 0+0+0] children: not-inline
-                  BlockContainer <div.timeline-fill> at [8,445] [0+0+0 0 0+0+854] [0+0+0 5 0+0+0] children: not-inline
+                  BlockContainer <div.timeline-fill> at [8,445] [0+0+0 0 0+0+0] [0+0+0 5 0+0+0] children: not-inline
                   BlockContainer <div.timeline-buffered> at [8,445] positioned [0+0+0 854 0+0+0] [0+0+0 5 0+0+0] [BFC] children: not-inline
               Box <div.button-bar> at [16,454] flex-container(row) flex-item [0+0+8 838 8+0+0] [0+0+4 30 4+0+0] [FFC] children: not-inline
                 Box <button.control-button.play-pause-button> at [16,457] flex-container(row) flex-item [0+0+0 24 0+0+0] [0+0+0 24 0+0+0] [FFC] children: not-inline
