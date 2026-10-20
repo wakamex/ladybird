@@ -1,0 +1,53 @@
+Viewport <#document> at [0,0] [0+0+0 800 0+0+0] [0+0+0 600 0+0+0] [BFC] children: not-inline
+  BlockContainer <html> at [0,0] [0+0+0 800 0+0+0] [0+0+0 130 0+0+0] [BFC] children: not-inline
+    BlockContainer <body> at [0,0] [0+0+0 800 0+0+0] [0+0+0 130 0+0+0] children: not-inline
+      BlockContainer <div.container> at [0,0] [0+0+0 500 0+0+0] [0+0+0 40 0+0+0] [BFC] children: not-inline
+        BlockContainer <(anonymous)> at [0,0] [0+0+0 500 0+0+0] [0+0+0 0 0+0+0] children: inline
+          TextNode <#text> (not painted)
+        BlockContainer <div#length-margins.box> at [370,0] [20+0+0 100 0+0+30] [0+0+0 10 0+0+0] children: not-inline
+        BlockContainer <(anonymous)> at [0,10] [0+0+0 500 0+0+0] [0+0+0 0 0+0+0] children: inline
+          TextNode <#text> (not painted)
+        BlockContainer <div#wider-than-container.box> at [-130,10] [20+0+0 600 0+0+30] [0+0+0 10 0+0+0] children: not-inline
+        BlockContainer <(anonymous)> at [0,20] [0+0+0 500 0+0+0] [0+0+0 0 0+0+0] children: inline
+          TextNode <#text> (not painted)
+        BlockContainer <div#auto-margin-left.box> at [370,20] [370+0+0 100 0+0+30] [0+0+0 10 0+0+0] children: not-inline
+        BlockContainer <(anonymous)> at [0,30] [0+0+0 500 0+0+0] [0+0+0 0 0+0+0] children: inline
+          TextNode <#text> (not painted)
+        BlockContainer <div#auto-margin-right.box> at [20,30] [20+0+0 100 0+0+380] [0+0+0 10 0+0+0] children: not-inline
+        BlockContainer <(anonymous)> at [0,40] [0+0+0 500 0+0+0] [0+0+0 0 0+0+0] children: inline
+          TextNode <#text> (not painted)
+      BlockContainer <(anonymous)> at [0,40] [0+0+0 800 0+0+0] [0+0+0 0 0+0+0] children: inline
+        TextNode <#text> (not painted)
+      BlockContainer <div.container> at [0,40] [0+0+0 500 0+0+0] [0+0+0 30 0+0+0] [BFC] children: not-inline
+        BlockContainer <(anonymous)> at [0,40] [0+0+0 500 0+0+0] [0+0+0 0 0+0+0] children: inline
+          TextNode <#text> (not painted)
+          BlockContainer <div.float> at [450,40] floating [0+0+0 50 0+0+0] [0+0+0 30 0+0+0] [BFC] children: not-inline
+          TextNode <#text> (not painted)
+        BlockContainer <div#next-to-right-float.box> at [350,40] [20+0+0 100 0+0+30] [0+0+0 10 0+0+0] [BFC] children: not-inline
+        BlockContainer <(anonymous)> at [0,50] [0+0+0 500 0+0+0] [0+0+0 0 0+0+0] children: inline
+          TextNode <#text> (not painted)
+      BlockContainer <(anonymous)> at [0,70] [0+0+0 800 0+0+0] [0+0+0 0 0+0+0] children: inline
+        TextNode <#text> (not painted)
+      BlockContainer <div.container> at [0,70] [0+0+0 500 0+0+0] [0+0+0 30 0+0+0] [BFC] children: not-inline
+        BlockContainer <(anonymous)> at [0,70] [0+0+0 500 0+0+0] [0+0+0 0 0+0+0] children: inline
+          TextNode <#text> (not painted)
+          BlockContainer <div.float> at [450,70] floating [0+0+0 50 0+0+0] [0+0+0 30 0+0+0] [BFC] children: not-inline
+          TextNode <#text> (not painted)
+        BlockContainer <div#margin-wider-than-right-float.box> at [320,70] [20+0+0 100 0+0+80] [0+0+0 10 0+0+0] [BFC] children: not-inline
+        BlockContainer <(anonymous)> at [0,80] [0+0+0 500 0+0+0] [0+0+0 0 0+0+0] children: inline
+          TextNode <#text> (not painted)
+      BlockContainer <(anonymous)> at [0,100] [0+0+0 800 0+0+0] [0+0+0 0 0+0+0] children: inline
+        TextNode <#text> (not painted)
+      BlockContainer <div.container> at [0,100] [0+0+0 500 0+0+0] [0+0+0 30 0+0+0] [BFC] children: not-inline
+        BlockContainer <(anonymous)> at [0,100] [0+0+0 500 0+0+0] [0+0+0 0 0+0+0] children: inline
+          TextNode <#text> (not painted)
+          BlockContainer <div.float> at [0,100] floating [0+0+0 50 0+0+0] [0+0+0 30 0+0+0] [BFC] children: not-inline
+          TextNode <#text> (not painted)
+        BlockContainer <div#next-to-left-float.box> at [370,100] [20+0+0 100 0+0+30] [0+0+0 10 0+0+0] [BFC] children: not-inline
+        BlockContainer <(anonymous)> at [0,110] [0+0+0 500 0+0+0] [0+0+0 0 0+0+0] children: inline
+          TextNode <#text> (not painted)
+      BlockContainer <(anonymous)> at [0,130] [0+0+0 800 0+0+0] [0+0+0 0 0+0+0] children: inline
+        TextNode <#text> (not painted)
+
+SC for Viewport<#document> [0,0 800x600] (z-index: auto)
+ SC for BlockContainer<HTML> [0,0 800x130] (z-index: auto)

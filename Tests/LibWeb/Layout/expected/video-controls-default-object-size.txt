@@ -12,7 +12,7 @@ Viewport <#document> at [0,0] [0+0+0 800 0+0+0] [0+0+0 600 0+0+0] [BFC] children
             Box <div.controls.visible> at [8,115] positioned flex-container(column) [0+0+0 300 0+0+0] [0+0+0 43 0+0+0] [FFC] children: not-inline
               BlockContainer <div.timeline> at [8,115] flex-item [0+0+0 300 0+0+0] [-5+0+5 5 5+0+-5] [BFC] children: not-inline
                 BlockContainer <div.timeline-track> at [8,115] positioned [0+0+0 300 0+0+0] [0+0+0 5 0+0+0] children: not-inline
-                  BlockContainer <div.timeline-fill> at [8,115] [0+0+0 0 0+0+300] [0+0+0 5 0+0+0] children: not-inline
+                  BlockContainer <div.timeline-fill> at [8,115] [0+0+0 0 0+0+0] [0+0+0 5 0+0+0] children: not-inline
               Box <div.button-bar> at [16,124] flex-container(row) flex-item [0+0+8 284 8+0+0] [0+0+4 30 4+0+0] [FFC] children: not-inline
                 Box <button.control-button.play-pause-button> at [16,127] flex-container(row) flex-item [0+0+0 24 0+0+0] [0+0+0 24 0+0+0] [FFC] children: not-inline
                   SVGSVGBox <svg.icon.play-pause-icon> at [16,127] flex-item [0+0+0 24 0+0+0] [0+0+0 24 0+0+0] viewport-transform=[1 0 0 1 0 0] [SVG] children: not-inline

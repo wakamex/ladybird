@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<style>
+    body {
+        margin: 0;
+    }
+    .container {
+        direction: rtl;
+        display: flow-root;
+        width: 500px;
+    }
+    .box {
+        height: 10px;
+        width: 100px;
+    }
+    .float {
+        height: 30px;
+        width: 50px;
+    }
+</style>
+<div class="container">
+    <div class="box" id="length-margins" style="margin-left: 20px; margin-right: 30px"></div>
+    <div class="box" id="wider-than-container" style="width: 600px; margin-left: 20px; margin-right: 30px"></div>
+    <div class="box" id="auto-margin-left" style="margin-left: auto; margin-right: 30px"></div>
+    <div class="box" id="auto-margin-right" style="margin-left: 20px; margin-right: auto"></div>
+</div>
+<div class="container">
+    <div class="float" style="float: right"></div>
+    <div class="box" id="next-to-right-float" style="overflow: hidden; margin-left: 20px; margin-right: 30px"></div>
+</div>
+<div class="container">
+    <div class="float" style="float: right"></div>
+    <div class="box" id="margin-wider-than-right-float" style="overflow: hidden; margin-left: 20px; margin-right: 80px"></div>
+</div>
+<div class="container">
+    <div class="float" style="float: left"></div>
+    <div class="box" id="next-to-left-float" style="overflow: hidden; margin-left: 20px; margin-right: 30px"></div>
+</div>

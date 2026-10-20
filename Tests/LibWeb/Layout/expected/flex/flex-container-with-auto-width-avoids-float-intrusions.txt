@@ -1,6 +1,6 @@
 Viewport <#document> at [0,0] [0+0+0 800 0+0+0] [0+0+0 600 0+0+0] [BFC] children: not-inline
   BlockContainer <html> at [0,0] [0+0+0 800 0+0+0] [0+0+0 552 0+0+0] [BFC] children: not-inline
-    BlockContainer <body> at [8,8] [8+0+0 400 0+0+392] [8+0+0 536 0+0+8] children: not-inline
+    BlockContainer <body> at [8,8] [8+0+0 400 0+0+8] [8+0+0 536 0+0+8] children: not-inline
       BlockContainer <div.full-width-float> at [8,8] floating [0+0+0 400 0+0+0] [0+0+0 100 0+0+0] [BFC] children: not-inline
       Box <div.small-negative-margin> at [3,108] flex-container(row) [-5+0+0 405 0+0+0] [0+0+0 100 0+0+0] [FFC] children: not-inline
         BlockContainer <(anonymous)> at [3,108] flex-item [0+0+0 303.78125 0+0+0] [0+0+0 100 0+0+0] [BFC] children: inline

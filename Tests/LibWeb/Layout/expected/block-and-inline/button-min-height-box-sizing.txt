@@ -11,7 +11,7 @@ Viewport <#document> at [0,0] [0+0+0 800 0+0+0] [0+0+0 600 0+0+0] [BFC] children
                     "x"
                 TextNode <#text> (not painted)
       BlockContainer <div.block> at [8,58] [0+0+0 784 0+0+0] [0+0+0 50 0+0+0] children: not-inline
-        BlockContainer <button> at [18,68] [0+5+5 6.0625 5+5+757.9375] [0+5+5 30 5+5+0] [BFC] children: not-inline
+        BlockContainer <button> at [18,68] [0+5+5 6.0625 5+5+0] [0+5+5 30 5+5+0] [BFC] children: not-inline
           BlockContainer <(anonymous)> at [18,68] flex-container(column) [0+0+0 6.0625 0+0+0] [0+0+0 30 0+0+0] [FFC] children: not-inline
             BlockContainer <(anonymous)> at [18,78] flex-item [0+0+0 6.0625 0+0+0] [0+0+0 10 0+0+0] [BFC] children: inline
               frag 0 from TextNode start: 0, length: 1, rect: [18,78 6.0625x10] baseline: 8

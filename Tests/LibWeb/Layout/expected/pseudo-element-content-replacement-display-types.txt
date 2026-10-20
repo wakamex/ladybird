@@ -10,7 +10,7 @@ Viewport <#document> at [0,0] [0+0+0 800 0+0+0] [0+0+0 600 0+0+0] [BFC] children
       BlockContainer <(anonymous)> at [8,24] [0+0+0 784 0+0+0] [0+0+0 0 0+0+0] children: inline
         TextNode <#text> (not painted)
       BlockContainer <div.block.single> at [8,24] [0+0+0 784 0+0+0] [0+0+0 26 0+0+0] children: not-inline
-        ImageBox <(anonymous)> at [8,24] [0+0+0 10 0+0+774] [0+0+0 10 0+0+0] children: not-inline
+        ImageBox <(anonymous)> at [8,24] [0+0+0 10 0+0+0] [0+0+0 10 0+0+0] children: not-inline
         BlockContainer <(anonymous)> at [8,34] [0+0+0 784 0+0+0] [0+0+0 16 0+0+0] children: inline
           frag 0 from TextNode start: 0, length: 5, rect: [8,34 40.671875x16] baseline: 12.796875
               "block"
@@ -18,7 +18,7 @@ Viewport <#document> at [0,0] [0+0+0 800 0+0+0] [0+0+0 600 0+0+0] [BFC] children
       BlockContainer <(anonymous)> at [8,50] [0+0+0 784 0+0+0] [0+0+0 0 0+0+0] children: inline
         TextNode <#text> (not painted)
       BlockContainer <div.flex.single> at [8,50] [0+0+0 784 0+0+0] [0+0+0 26 0+0+0] children: not-inline
-        ImageBox <(anonymous)> at [8,50] flex-container(row) [0+0+0 10 0+0+774] [0+0+0 10 0+0+0] children: not-inline
+        ImageBox <(anonymous)> at [8,50] flex-container(row) [0+0+0 10 0+0+0] [0+0+0 10 0+0+0] children: not-inline
         BlockContainer <(anonymous)> at [8,60] [0+0+0 784 0+0+0] [0+0+0 16 0+0+0] children: inline
           frag 0 from TextNode start: 0, length: 4, rect: [8,60 29.09375x16] baseline: 12.796875
               "flex"
@@ -38,12 +38,12 @@ Viewport <#document> at [0,0] [0+0+0 800 0+0+0] [0+0+0 600 0+0+0] [BFC] children
       BlockContainer <(anonymous)> at [8,92] [0+0+0 784 0+0+0] [0+0+0 0 0+0+0] children: inline
         TextNode <#text> (not painted)
       BlockContainer <div.table> at [8,92] [0+0+0 784 0+0+0] [0+0+0 36 0+0+0] children: not-inline
-        ImageBox <(anonymous)> at [8,92] [0+0+0 10 0+0+774] [0+0+0 10 0+0+0] children: not-inline
+        ImageBox <(anonymous)> at [8,92] [0+0+0 10 0+0+0] [0+0+0 10 0+0+0] children: not-inline
         BlockContainer <(anonymous)> at [8,102] [0+0+0 784 0+0+0] [0+0+0 16 0+0+0] children: inline
           frag 0 from TextNode start: 0, length: 5, rect: [8,102 38.625x16] baseline: 12.796875
               "table"
           TextNode <#text> (not painted)
-        ImageBox <(anonymous)> at [8,118] [0+0+0 10 0+0+774] [0+0+0 10 0+0+0] children: not-inline
+        ImageBox <(anonymous)> at [8,118] [0+0+0 10 0+0+0] [0+0+0 10 0+0+0] children: not-inline
       BlockContainer <(anonymous)> at [8,128] [0+0+0 784 0+0+0] [0+0+0 0 0+0+0] children: inline
         TextNode <#text> (not painted)
       BlockContainer <div.inline-table> at [8,128] [0+0+0 784 0+0+0] [0+0+0 16 0+0+0] children: inline

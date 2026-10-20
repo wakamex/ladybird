@@ -1,6 +1,6 @@
 Viewport <#document> at [0,0] [0+0+0 800 0+0+0] [0+0+0 600 0+0+0] [BFC] children: not-inline
   BlockContainer <html> at [0,0] [0+0+0 800 0+0+0] [0+0+0 75 0+0+0] [BFC] children: not-inline
-    BlockContainer <body> at [0,0] [0+0+0 600 0+0+200] [0+0+0 75 0+0+0] children: not-inline
+    BlockContainer <body> at [0,0] [0+0+0 600 0+0+0] [0+0+0 75 0+0+0] children: not-inline
       BlockContainer <div.bar> at [0,0] [0+0+0 600 0+0+0] [0+0+0 20 0+0+0] children: not-inline
         BlockContainer <div.float> at [0,0] floating [0+0+0 150 0+0+0] [0+0+0 25 0+0+0] [BFC] children: not-inline
       BlockContainer <(anonymous)> at [0,20] [0+0+0 600 0+0+0] [0+0+0 0 0+0+0] children: inline
